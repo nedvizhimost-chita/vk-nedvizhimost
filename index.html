@@ -11,36 +11,73 @@
       background-size: cover;
       font-family: Arial, sans-serif;
       display: flex;
-      align-items: center;
+      flex-direction: column;
       justify-content: center;
+      align-items: center;
       height: 100vh;
       margin: 0;
       text-align: center;
       color: white;
       text-shadow: 1px 1px 5px black;
     }
-    .message {
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 40px;
       background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .message {
+      background: rgba(0, 0, 0, 0.6);
       padding: 20px 30px;
       border-radius: 12px;
-      font-size: 24px;
+      font-size: 22px;
     }
-    a {
+    .timer {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 10px 0;
       color: #ffd700;
-      text-decoration: underline;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #0077ff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #0055cc;
     }
   </style>
   <script>
-    setTimeout(function() {
-      window.location.href = "https://vk.ru/id699388058";
-    }, 3000);
+    let seconds = 3;
+    function countdown() {
+      if (seconds > 0) {
+        document.getElementById('timer').innerText = seconds + ' сек.';
+        seconds--;
+        setTimeout(countdown, 1000);
+      } else {
+        window.location.href = "https://vk.ru/id699388058";
+      }
+    }
+    window.onload = countdown;
   </script>
 </head>
 <body>
+  <div class="title">Покупка и продажа недвижимости в Чите</div>
   <div class="message">
-    ⏳ Сейчас вы будете перенаправлены в наш ВКонтакте-профиль...
+    ⏳ Вы будете перенаправлены через <span class="timer" id="timer">3 сек.</span>
+    <br>
+    Если не сработает, нажмите кнопку ниже:
     <br><br>
-    Если этого не произошло, <a href="https://vk.ru/id699388058">нажмите сюда</a>.
+    <a class="button" href="https://vk.ru/id699388058">Перейти в группу</a>
   </div>
 </body>
 </html>
