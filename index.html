@@ -1,8 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
   <title>Переход в группу ВКонтакте</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Яндекс.Метрика -->
   <script type="text/javascript">
@@ -14,22 +16,89 @@
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     ym(101577399, "init", {
-      clickmap:true,
-      trackLinks:true,
-      accurateTrackBounce:true
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
     });
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/ТВОЙ_ID" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <noscript>
+    <div><img src="https://mc.yandex.ru/watch/101577399" style="position:absolute; left:-9999px;" alt="" /></div>
+  </noscript>
   <!-- /Яндекс.Метрика -->
 
+  <style>
+    body {
+      background: url('bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      text-align: center;
+      color: white;
+      text-shadow: 1px 1px 5px black;
+    }
+    .title {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+    .message {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-size: 22px;
+    }
+    .timer {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #ffd700;
+    }
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #0077ff;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .button:hover {
+      background-color: #0055cc;
+    }
+  </style>
   <script>
-    setTimeout(function() {
-      window.location.href = "https://vk.ru/id699388058";
-    }, 3000);
+    let seconds = 3;
+    function countdown() {
+      if (seconds > 0) {
+        document.getElementById('timer').innerText = seconds + ' сек.';
+        seconds--;
+        setTimeout(countdown, 1000);
+      } else {
+        window.location.href = "https://vk.ru/id699388058";
+      }
+    }
+    window.onload = countdown;
   </script>
 </head>
 <body>
-  <p>⏳ Сейчас мы перенаправим вас в нашу группу ВКонтакте...</p>
-  <p>Если не сработало — <a href="https://vk.com/ТВОЯ_ГРУППА">нажмите сюда</a>.</p>
+  <div class="title">Покупка и продажа недвижимости в Чите</div>
+  <div class="message">
+    ⏳ Вы будете перенаправлены через <span class="timer" id="timer">3 сек.</span><br>
+    Если не сработает, нажмите кнопку ниже:
+    <br><br>
+    <a class="button" href="https://vk.ru/id699388058">Перейти в группу</a>
+  </div>
 </body>
 </html>
